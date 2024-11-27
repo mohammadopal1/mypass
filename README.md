@@ -1,66 +1,42 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+CIS 476 Term Project
+Document/Program Due Dates: Monday 12/2/24
+Demo Time: 12/2/24 3pm
+This project is required for all students. You may finish the project all by yourself or team with others. 3 team members maximum.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+In this project, you are required to design a password management software “MyPass”. MyPass can be a mobile app or web-based software with the following functions/features. Bitwarden is a sample product.
+Functions/Features
+•	Allow user to register an account (email address as username and a master password and three security questions)
+•	Suggest strong password (password generator)
+•	Weak master password warning
+•	Once logs in, the user will have access to all sensitive data saved in the vault.
+•	MyPass has built-in data type in the vault, including Login, Credit Card, Identity, Secure Notes.
+•	MyPass allows user to create/modify/delete items in the vault.
+•	MyPass allows user to easily copy username/password and URL in Login data type
+•	MyPass allows user to easily copy credit card number and CVV in credit card data type
+•	Sensitive data such as username, password, credit card number, CVV, passport number, license number, social security number must be masked
+•	All masked data must be given an option to unmask.
+•	Auto lock after x mins of inactivity
+•	Auto delete copied sensitive data in clipboard after x mins 
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Implementation
+•	User Authentication and Encryption:
+o	Implement the Singleton pattern to manage the user's session securely.
+•	Password Storage and Management:
+o	Apply the Observer pattern to notify users in the events of weak password, credit card expiration, passport expiration, license expiration, etc.
+•	User Interface and Interaction:
+o	Implement the Mediator pattern to manage communication between various UI components.
+•	Password Generation:
+o	Apply the Builder pattern to create complex passwords with specific requirements (length, complexity).
+•	Data Mask and Unmask:
+o	Implement the Proxy pattern to mask and unmask sensitive data.
+•	Master Password Recovery:
+o	Apply the Chain of Responsibility pattern to create a secure process (using three security questions to build the chain) for recovering a forgotten master password.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+•	Notes: 
+o	Provide detailed design of patterns used in the solution via class diagram with mapping of pattern classes to the actual application classes.
+o	The developed code must be thoroughly commented and synchronized with the model.
+•	Submission
+o	Submit One .zip file that contains the followings
+	Source code
+	A report that includes class diagrams and their descriptions, database schema and descriptions, user-interface screen shots and descriptions, references.
