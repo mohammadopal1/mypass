@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -12,6 +13,30 @@ class UserController extends Controller
     public function index(){
         return view("login");
     }
+
+    public function login(Request $request)
+    {
+        // Validate the incoming request
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // Attempt to log the user in
+        if (Auth::attempt($validatedData)) {
+            // Regenerate session to prevent fixation attacks
+            $request->session()->regenerate();
+
+            // Redirect to the intended page or home page
+            return redirect()->intended('/home')->with('success', 'You are logged in!');
+        }
+
+        // Return back with error if authentication fails
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
     public function create(){
         return view("register");
     }

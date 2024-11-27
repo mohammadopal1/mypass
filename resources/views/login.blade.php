@@ -32,7 +32,7 @@
             @endif
 
             <!-- Login Form -->
-            <form action="/login" method="POST">
+            <form action="{{ route('user.login.submit') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email Address</label>
