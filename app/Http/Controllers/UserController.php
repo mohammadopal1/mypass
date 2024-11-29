@@ -27,8 +27,9 @@ class UserController extends Controller
             // Regenerate session to prevent fixation attacks
             $request->session()->regenerate();
 
-            // Redirect to the intended page or home page
-            return redirect()->intended('/home')->with('success', 'You are logged in!');
+            // Redirect to the intended page
+            return redirect()->intended(route('user.deshbord'))->with('success', 'You are logged in!');
+
         }
 
         // Return back with error if authentication fails

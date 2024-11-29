@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthuserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/home', function () {
-//     return view('welcome');
-// });
 
 Route::get('/user-login', [UserController::class, 'index'])->name('user.login');
 Route::post('/user-login', [UserController::class, 'login'])->name('user.login.submit');
@@ -28,7 +26,5 @@ Route::post('/user-register-create', [UserController::class, 'store'])->name('us
 
 // Protected Routes (Requires Authentication)
 Route::middleware(['ensure.authenticated'])->group(function () {
-    Route::get('/home', function () {
-        return view('welcome'); // User's dashboard or home page
-    })->name('home');
+    Route::get('/user-deshbord', [AuthuserController::class, 'index'])->name('user.deshbord');
 });
