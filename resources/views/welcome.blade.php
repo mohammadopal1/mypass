@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+    <div class="class="container mt-5"">
+        @include('layouts.nav')
+    </div>
     <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
         <h1 class="text-center mb-4">Welcome to MyPass</h1>
         <p class="text-center mb-5">A secure password management system designed to keep your sensitive information safe.</p>

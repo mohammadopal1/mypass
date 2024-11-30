@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/user-login', [UserController::class, 'index'])->name('user.login');
 Route::post('/user-login', [UserController::class, 'login'])->name('user.login.submit');

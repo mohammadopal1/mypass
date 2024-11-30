@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="container d-flex flex-column justify-content-center align-items-center mt-5">
+        @include('layouts.nav')
         <h1 class="text-center ">Welcome to MyPass</h1>
         <p class="text-center ">A secure password management system designed to keep your sensitive information safe.</p>
         

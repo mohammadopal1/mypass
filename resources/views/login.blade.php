@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container mt-5">
+        @include('layouts.nav')
         <div class="row justify-content-center">
             <div class="col-md-6">
             <h1>Login</h1>
