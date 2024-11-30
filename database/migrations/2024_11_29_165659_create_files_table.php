@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('card_number');
-            $table->string('cvv');
+            $table->text('card_number'); // Use `text` for encrypted data
+            $table->text('cvv');         // Use `text` for encrypted data
             $table->text('note')->nullable();
             $table->timestamps();
         });

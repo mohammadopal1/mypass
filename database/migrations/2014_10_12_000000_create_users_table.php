@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('security_question_1');
-            $table->string('security_answer_1');
-            $table->string('security_question_2');
-            $table->string('security_answer_2');
-            $table->string('security_question_3');
-            $table->string('security_answer_3');
+            $table->string('security_question_1')->nullable();
+            $table->string('security_answer_1')->nullable();
+            $table->string('security_question_2')->nullable();
+            $table->string('security_answer_2')->nullable();
+            $table->string('security_question_3')->nullable();
+            $table->string('security_answer_3')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

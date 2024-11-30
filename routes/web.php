@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthuserController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,14 @@ Route::post('/user-register-create', [UserController::class, 'store'])->name('us
 // Protected Routes (Requires Authentication)
 Route::middleware(['ensure.authenticated'])->group(function () {
     Route::get('/user-deshbord', [AuthuserController::class, 'index'])->name('user.deshbord');
+    // Route::resource('files', FileController::class);
+    Route::resource('files', FileController::class)->names([
+        'index' => 'files.index',
+        'create' => 'files.create',
+        'store' => 'files.store',
+        'show' => 'files.show',
+        'edit' => 'files.edit',
+        'update' => 'files.update',
+        'destroy' => 'files.destroy',
+    ]);
 });

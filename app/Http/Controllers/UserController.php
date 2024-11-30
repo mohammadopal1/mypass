@@ -28,7 +28,7 @@ class UserController extends Controller
             $request->session()->regenerate();
 
             // Redirect to the intended page
-            return redirect()->intended(route('user.deshbord'))->with('success', 'You are logged in!');
+            return redirect()->intended(route('files.index'))->with('success', 'You are logged in!');
 
         }
 
@@ -68,6 +68,12 @@ class UserController extends Controller
 
         // Redirect to the login page with a success message
         return redirect()->route('user.login')->with('success', 'Account created successfully! Please log in.');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
     
 }
